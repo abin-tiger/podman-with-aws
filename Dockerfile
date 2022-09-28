@@ -1,9 +1,5 @@
 FROM mgoltzsche/podman
 
-RUN apk add --no-cache wget unzip curl bash
-
-RUN wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscliv2.zip" \
-    && unzip awscliv2.zip \
-    && ./aws/install \
-    && rm -rf awscliv2.zip \
-    && rm -rf ./aws
+RUN apk update && apk add --no-cache curl wget unzip gcompat zip &&  \
+    curl -s https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip && \
+    unzip awscliv2.zip && ./aws/install
