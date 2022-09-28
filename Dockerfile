@@ -1,6 +1,6 @@
 FROM mgoltzsche/podman
 
-RUN apt-get update -qq && apt install wget curl zip -y
+RUN apk add --no-cache wget unzip curl
 
 RUN wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscliv2.zip" \
     && unzip awscliv2.zip \
