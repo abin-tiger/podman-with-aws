@@ -3,7 +3,7 @@ FROM quay.io/containers/podman:v4.2.0
 
 RUN ln -s /usr/bin/podman /usr/bin/docker
 
-RUN yum install wget unzip curl zip python3 -y &&  \
+RUN yum install wget unzip curl zip python3 python3-pip -y &&  \
     curl -s https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip && \
     unzip awscliv2.zip && ./aws/install
 
